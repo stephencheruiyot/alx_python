@@ -16,7 +16,8 @@ def random_sign():
     print(f"{number}: is {sign}")
 
 if __name__ == "__main__":
-    for _ in range(10):  # Replace 10 with the desired number of random numbers you want to generate.
+    
+    for _ in range(1):  # Replace 10 with the desired number of random numbers you want to generate.
         random_sign()
 
 
