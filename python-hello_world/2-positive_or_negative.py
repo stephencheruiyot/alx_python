@@ -13,7 +13,7 @@ def random_sign():
     else:
         sign = "negative"
 
-    print(f"{number}: is {sign}")
+    print(f"{number} is {sign}")
 
 if __name__ == "__main__":
     
