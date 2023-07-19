@@ -1,8 +1,10 @@
 #a function that adds two integers and returns the result
 
-def sum (a, b):
+def add (a, b):
     return (a+b)
 
-add = sum (2, 3)
 
-print("The sum is {}" .format(add))
+
+print(add(1, 2))
+print(add(98, 0))
+print(add(100, -2))
