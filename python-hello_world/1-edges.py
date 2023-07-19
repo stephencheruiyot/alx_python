@@ -1,14 +1,8 @@
 #!/usr/bin/python3
 word = "Holberton"
 
-#the first 3 letters "Hol"
-
 word_first_3 = word[:3]
-
-#the last two letters "on"
-word_last_2 = word[7:]
-
-#the middle word "olberto"
+word_last_2 = word[-2:]
 middle_word = word[1:-1]
 
 print("First 3 letters: {}".format(word_first_3))
