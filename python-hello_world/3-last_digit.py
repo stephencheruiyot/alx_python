@@ -6,7 +6,7 @@ number = random.randint(-10000, 10000)
 # Get the last digit of the number using the modulo operator (%)
 last_digit = abs(number) % 10
 
-# Print the output based on the last digit
+# Print the output based on the last digit including a sign 
 sign = "-" if number < 0 else ""
 print(f"Last digit of {number} is {sign}{last_digit} and is")
  
