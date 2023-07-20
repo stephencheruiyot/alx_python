@@ -1,9 +1,9 @@
 def validate_password(password):
-    # Check password length
+    # Check if the password is at least 8 characters long
     if len(password) < 8:
         return False
 
-    # Check if password contains at least one uppercase letter, one lowercase letter, and one digit
+    # Check if the password contains at least one uppercase letter, one lowercase letter, and one digit
     has_uppercase = False
     has_lowercase = False
     has_digit = False
@@ -19,18 +19,9 @@ def validate_password(password):
     if not (has_uppercase and has_lowercase and has_digit):
         return False
 
-    # Check if password contains spaces
+    # Check if the password contains spaces
     if ' ' in password:
         return False
 
-    # All checks passed
+    # If all checks pass, return True
     return True
-
-# Example usage:
-password1 = "StrongP@ssword123"
-password2 = "weakpass"
-password3 = "Password with spaces"
-
-print(validate_password(password1))  # True
-print(validate_password(password2))  # False
-print(validate_password(password3))  # False
