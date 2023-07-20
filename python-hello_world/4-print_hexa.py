@@ -1,2 +1,2 @@
-for i in range(99):
-    print("{:d} 0x{:X}".format(i, i))
+for num in range(99):
+    print("{:d} - 0x{:02X}".format(num, num))
