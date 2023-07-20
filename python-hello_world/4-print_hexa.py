@@ -1,3 +1,3 @@
 for i in range(99):
-    print("{:d} 0x{:02x}".format(i, i))
+    print(f"Decimal: {i}  Hexadecimal: {i:02X}")
 
