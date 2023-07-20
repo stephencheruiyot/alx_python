@@ -1,12 +1,11 @@
-#a function that adds two integers and returns the result
+def add(a, b):
+    while b != 0:
+        carry = a & b
+        a = a ^ b
+        b = carry << 1
+    return a
 
-def add (a, b):
-    return (a+b)
-
-
-
-print(add(1, 2)),
-
-print(add(98, 0)),
-
-print(add(100, -2)),
+# Test cases
+print(add(1, 2))    # Output: 3
+print(add(98, 0))   # Output: 98
+print(add(100, -2)) # Output: 98
