@@ -1,13 +1,19 @@
 #Write a function that computes a to the power of b and return the value.
-
 def pow(a, b):
-    
-    return a ** b
+    result = 1
 
-print(pow(2, 2))
-print(pow(98, 2))
-print(pow(98, 0))
-print(pow(100, -2))
-print(pow(-4, 5))
+    # For positive or zero exponents
+    if b >= 0:
+        for _ in range(b):
+            result *= a
+
+    # For negative exponents
+    else:
+        for _ in range(-b):
+            result /= a
+
+    return result
+
+
 
 
