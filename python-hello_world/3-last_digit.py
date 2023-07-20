@@ -8,7 +8,7 @@ last_digit = abs(number) % 10
 
 # Print the output based on the last digit
 sign = "-" if number < 0 else ""
-print(f"The last digit of {number} is {sign}{last_digit} and is")
+print(f"Last digit of {number} is {sign}{last_digit} and is")
  
  
 
