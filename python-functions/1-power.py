@@ -1,18 +1,14 @@
 def pow(a, b):
-    result = 1
-
+    if b == 0:
+        return 1
+    
+    result = a
+    for _ in range(1, abs(b)):
+        result *= a
+    
     if b < 0:
-        a = 1 / a
-        b = -b
-
-    while b:
-        if b % 2 == 1:
-            result *= a
-        a *= a
-        b //= 2
-
+        result = 1 / result
+    
     return result
-
-
 
 
