@@ -14,6 +14,7 @@ else:
     result_string += "and is less than 6 and not 0"
 
 print(result_string)
+print()
 
 
  
