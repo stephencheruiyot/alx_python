@@ -1,15 +1,12 @@
 import sys
 
-def main():
-    argv_length = len(sys.argv) - 1
-    arguments = sys.argv[1:]
-
-    print(f"Number of argument{'s' if argv_length != 1 else ''}: {argv_length}", end='')
-    print(f":{'.' if argv_length == 0 else ''}")
-
-    if argv_length > 0:
-        for i, arg in enumerate(arguments, start=1):
-            print(f"{i}: {arg}")
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    argv = sys.argv[1:]
+    num_args = len(argv)
+    print(f"Number of argument(s): {num_args}")
+    if num_args == 0:
+        print(":")
+    else:
+        print(":")
+        for i in range(num_args):
+            print(f"{i+1}: {argv[i]}")
