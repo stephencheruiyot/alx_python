@@ -5,6 +5,6 @@ if __name__ == "__main__":
 
     import add_0
 
-    result = (a + b)
+    result = int(a + b)
 
     print("{} + {} = {}".format(a, b, result))
