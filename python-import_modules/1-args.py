@@ -6,6 +6,7 @@ def main():
 
     if num_arguments == 0:
         print("0 argument.")
+        
     else:
         print(f"{num_arguments} {'argument' if num_arguments == 1 else 'arguments'}:")
 
