@@ -4,5 +4,5 @@ def raise_exception_msg(message="C is fun"):
             self.message = message
             super().__init__(self.message)
 
-    raise NameException(C is fun)
+    raise NameException("C is fun")
 
