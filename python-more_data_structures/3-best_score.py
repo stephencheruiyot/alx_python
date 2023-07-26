@@ -1,7 +1,7 @@
 def best_score(a_dictionary):
     if not a_dictionary:
         return None
-#Initialize max_key to None and max_value to negative infinity
+
     max_key = None
     max_value = float('-inf')
 
@@ -11,4 +11,5 @@ def best_score(a_dictionary):
             max_value = value
 
     return max_key
+
 
