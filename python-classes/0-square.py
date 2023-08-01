@@ -14,4 +14,16 @@ class Square:
             size (int): The size of the square's sides.
         """
         self.size = size
+"""
+For the module documentation:
+python3 -c 'print(__import__("0-square").__doc__)'
 
+For the class documentation:
+python3 -c 'print(__import__("0-square").Square.__doc__)'
+
+For the method documentation:
+python3 -c 'print(__import__("0-square").Square.__init__.__doc__)'
+
+
+
+"""
