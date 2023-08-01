@@ -1,25 +1,17 @@
 class Square:
     """
-    This class represents a square defined by its size.
+    A class representing a square.
 
     Attributes:
-        size (int): The size of the square.
+        size (int): The size of the square's sides.
     """
 
     def __init__(self, size):
         """
-        Constructor for Square class.
+        Initializes a Square instance.
 
         Args:
-            size (int): The size of the square.
+            size (int): The size of the square's sides.
         """
         self.size = size
 
-    def area(self):
-        """
-        Calculate the area of the square.
-
-        Returns:
-            int: The area of the square.
-        """
-        return self.size ** 2
