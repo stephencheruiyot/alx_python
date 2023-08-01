@@ -8,6 +8,8 @@ class Square:
         size (int): The size of the square's sides.
     """
 
+    """Initialize a square instance
+"""
     def __init__(self, size):
         """
         Initializes a Square instance.
@@ -17,7 +19,3 @@ class Square:
         """
         self.size = size
 
-# Test the Square class
-if __name__ == "__main__":
-    square = Square(5)
-    print(f"Square size: {square.size}")"""
