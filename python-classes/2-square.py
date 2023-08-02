@@ -1,5 +1,5 @@
 """
-A class Square that defines a square by: (based on 1-square.py)
+A class Square that defines a square by: 
 
 Private instance attribute: size   
 
@@ -14,6 +14,10 @@ class Square:
             size (int): The size of the square's side. Default is 0.
         """
         self.__size = size
+        
+        """
+        Getter method
+        """
 
     def get_size(self):
         """
@@ -23,6 +27,9 @@ class Square:
             int: The current value of the side length.
         """
         return self.__size
+        """
+                Setter method
+        """
 
     def set_size(self, size):
         """
@@ -40,6 +47,10 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
+        
+        """
+        Area method  to calculate the area of a square
+        """
 
     def area(self):
         """
