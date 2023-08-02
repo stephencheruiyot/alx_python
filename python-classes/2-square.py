@@ -47,7 +47,7 @@ class Square:
         message 'size must be >= 0
         """
         if not isinstance(size, int):
-            raise TypeError("Size must be an integer")
+            raise TypeError("size must be an integer")
         
         """
         Raise valueError if size is less than zero
@@ -64,3 +64,4 @@ class Square:
         """Return:
         Area (side * side) using property method."""
         return self.__size ** 2
+    
