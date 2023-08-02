@@ -16,7 +16,7 @@ class Square:
         self.__size = size
         
         """
-        Getter method
+        Getter method to return the current value of the side lenght.
         """
 
     def get_size(self):
@@ -28,7 +28,7 @@ class Square:
         """
         return self.__size
         """
-                Setter method
+                Setter method to set the new value for the side lenght
         """
 
     def set_size(self, size):
