@@ -5,7 +5,12 @@ a class representing a square
 class Square:
     
     """
-    constructor method to initialize the value of side length to zero
+    Attributes:
+        size (int): The size of the square's side.
+        
+    constructor method: __init__(self, size=0)
+    to initialize the value of side length to zero
+    
     """
     def __init__(self, size=0):
         
@@ -52,3 +57,12 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
+        
+        """
+        calculate the area of square:
+        
+        """
+    def area(self):
+        """Return:
+        Area (side * side) using property method."""
+        return self.__size ** 2
