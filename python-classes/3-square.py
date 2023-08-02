@@ -20,22 +20,27 @@ class Square:
         """
                 
         """
-        public getter and setter methods for accessing/modifying
+        The @property decorator 
+        defines a getter method for the "size" attribute.
         """
-    def get_size(self):
+    @property
+    def size(self):
         
         """
         Getter function that returns the current value
 
         Returns:
-            _type_: _description_
+            __size: 
         """
         return self.__size
     
         """
-        Setter Function 
+        Setter Function:
+        The @size.setter decorator defines a setter method
+        for the "size" attribute.
         """
-    def set_size(self, size):
+    @size.setter
+    def size(self, size):
         
         """
         Sets new values for Side Length.
