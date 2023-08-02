@@ -18,8 +18,7 @@ class Square:
         """
         private instance variable for storing the side length
         """
-        self.__size = size
-        
+                
         """
         public getter and setter methods for accessing/modifying
         """
@@ -42,8 +41,7 @@ class Square:
         Sets new values for Side Length.
         Raises ValueError if input =< 0.
         """
-        self.__size = size
-        
+                
         """size must be an integer, 
         otherwise raise a TypeError exception with the 
         message 'size must be >= 0
