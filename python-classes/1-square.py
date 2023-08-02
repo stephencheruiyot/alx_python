@@ -14,7 +14,6 @@ class Square:
         private instance variable 
         for storing the side length
         """
-        self.__size = size
         
         """
         public getter and setter methods for accessing/modifying
@@ -27,8 +26,7 @@ class Square:
         Returns:
             self: _description_
         """
-        return self.__size
-    
+        
         """
         Setter Function 
         """
