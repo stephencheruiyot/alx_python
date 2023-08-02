@@ -11,7 +11,8 @@ class Square:
         
         
         """
-        private instance variable for storing the side length
+        private instance variable 
+        for storing the side length
         """
         self.__size = size
         
@@ -24,7 +25,7 @@ class Square:
         Getter function that returns the current value
 
         Returns:
-            _type_: _description_
+            self: _description_
         """
         return self.__size
     
@@ -33,12 +34,7 @@ class Square:
         """
     def set_size(self, size):
         
-        """
-        Sets new values for Side Length.
-        Raises ValueError if input =< 0.
-        """
-        self.__size = size
-        
+                
         """size must be an integer, 
         otherwise raise a TypeError exception with the 
         message 'size must be >= 0
