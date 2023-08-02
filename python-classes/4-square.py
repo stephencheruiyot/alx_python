@@ -13,69 +13,64 @@ class Square:
     
     """
     def __init__(self, size=0):
+                      
+        """
+        Constructor to initialize the value of the side length.
         
-        
+        Args:
+            size (int): The size of the square's side.
+
         """
-        private instance variable for storing the side length
+        self.__size =size        
         """
-        self.__size = size
-        
+        The @property decorator 
+        defines a getter method for the "size" attribute.
         """
-        public getter and setter methods for accessing/modifying
-        """
-    def get_size(self):
+    @property
+    def size(self):
         
         """
         Getter function that returns the current value
 
         Returns:
-            _type_: _description_
+            int: The size of the square's side. 
         """
         return self.__size
     
         """
-        Setter Function 
+        Setter Function:
+        The @size.setter decorator defines a setter method
+        for the "size" attribute.
         """
-    def set_size(self, size):
+    @size.setter
+    def size(self, value):
         
         """
         Sets new values for Side Length.
-        Raises ValueError if input =< 0.
-        """
-        self.__size = size
         
-        """size must be an integer, 
-        otherwise raise a TypeError exception with the 
-        message 'size must be >= 0
+        Args:
+            Value (int) : New Size of the square's side.
+        Raises:
+            TypeError: If input is not an integer.
+            ValueError if input =< 0.
         """
-        if not isinstance(size, int):
-            raise TypeError("Size must be an integer")
+                
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("Size must be >= 0")
+        self.__size = value
         
-        """
-        Raise valueError if size is less than zero
-        """
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
-        
-        """
-        calculate the area of square:
-        
-        """
     def area(self):
-        """Return:
-        Area (side * side) using property method."""
+        """
+        Return:
+        Area (side * side) using property method.
+        """
         return self.__size ** 2
     
-        """
-        Public instance method: 
-        def my_print(self): that prints in stdout the square with the character #:
-        if size is equal to 0, print an empty line
-        """
     def my_print(self):
-        if self.__size == 0:
+        if self.size ==0:
             print()
         else:
-            for _ in range(self.__size):
-                print("#" * self.__size)
-    
+            for _ in range(self.size):
+                print("#" * self.size)   
