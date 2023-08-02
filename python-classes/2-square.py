@@ -1,67 +1,44 @@
-"""
-a class representing a square 
-"""
-
 class Square:
-    
-    """
-    Attributes:
-        size (int): The size of the square's side.
-        
-    constructor method: __init__(self, size=0)
-    to initialize the value of side length to zero
-    
-    """
     def __init__(self, size=0):
-        
-        
         """
-        private instance variable for storing the side length
+        Constructor method to initialize the square's side length.
+
+        Parameters:
+            size (int): The size of the square's side. Default is 0.
         """
-                
-        """
-        public getter and setter methods for accessing/modifying
-        """
+        self.__size = size
+
     def get_size(self):
-        
         """
-        Getter function that returns the current value
+        Getter method that returns the current value of the side length.
 
         Returns:
-            _type_: _description_
+            int: The current value of the side length.
         """
         return self.__size
-    
-        """
-        Setter Function 
-        """
+
     def set_size(self, size):
-        
         """
-        Sets new values for Side Length.
-        Raises ValueError if input =< 0.
-        """
-                
-        """size must be an integer, 
-        otherwise raise a TypeError exception with the 
-        message 'size must be >= 0
+        Setter method to set a new value for the side length.
+
+        Parameters:
+            size (int): The new value for the side length.
+
+        Raises:
+            TypeError: If the input is not an integer.
+            ValueError: If the input is less than 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        
-        """
-        Raise valueError if size is less than zero
-        """
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        
-        """
-        calculate the area of square:
-        
-        """
+
     def area(self):
-        """Return:
-        Area (side * side) using property method."""
-        return self.__size ** 2
-    
+        """
+        Calculate the area of the square.
+
+        Returns:
+            int: The area of the square (side * side).
+        """
+        return self.__size * self.__size
