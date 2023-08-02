@@ -13,12 +13,15 @@ class Square:
     
     """
     def __init__(self, size=0):
-        
-        
+                      
         """
-        private instance variable for storing the side length
+        Constructor to initialize the value of the side length.
+        
+        Args:
+            size (int): The size of the square's side.
+
         """
-                
+        self.__size =size        
         """
         The @property decorator 
         defines a getter method for the "size" attribute.
@@ -30,7 +33,7 @@ class Square:
         Getter function that returns the current value
 
         Returns:
-            __size: 
+            int: The size of the square's side. 
         """
         return self.__size
     
@@ -40,32 +43,29 @@ class Square:
         for the "size" attribute.
         """
     @size.setter
-    def size(self, size):
+    def size(self, value):
         
         """
         Sets new values for Side Length.
-        Raises ValueError if input =< 0.
+        
+        Args:
+            Value (int) : New Size of the square's side.
+        Raises:
+            TypeError: If input is not an integer.
+            ValueError if input =< 0.
         """
                 
-        """size must be an integer, 
-        otherwise raise a TypeError exception with the 
-        message 'size must be >= 0
-        """
-        if not isinstance(size, int):
+        if not isinstance(value, int):
             raise TypeError("Size must be an integer")
+        if value < 0:
+            raise ValueError("Size must be >= 0")
+        self.__size = value
         
-        """
-        Raise valueError if size is less than zero
-        """
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
-        
-        """
-        calculate the area of square:
-        
-        """
     def area(self):
-        """Return:
-        Area (side * side) using property method."""
+        """
+        Return:
+        Area (side * side) using property method.
+        """
         return self.__size ** 2
+    
+
