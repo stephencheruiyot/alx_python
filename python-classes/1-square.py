@@ -1,48 +1,43 @@
+"""initialize a class square
 """
-a class representing a square 
-"""
-
 class Square:
-    
     """
-    constructor method to initialize the value of side length to zero
+    A class representing a square.
+
+    Attributes:
+        size (int): The size of the square's sides.
+    """
+
+    """
+    Initialize a square instance
     """
     def __init__(self, size=0):
-        
-        
         """
-        private instance variable 
-        for storing the side length
-        """
-        
-        """
-        public getter and setter methods for accessing/modifying
-        """
-    def get_size(self):
-        
-        """
-        Getter function that returns the current value
+        Initializes a Square instance.
 
-        Returns:
-            self: _description_
+        Args:
+            size (int): The size of the square's sides.
         """
         
         """
-        Setter Function 
-        """
-    def set_size(self, size):
+        size must be an integer, 
+        otherwise 
+        raise a TypeError exception with the message
+        size must be an integer
         
-                
-        """size must be an integer, 
-        otherwise raise a TypeError exception with the 
-        message 'size must be >= 0
         """
         if not isinstance(size, int):
-            raise TypeError("Size must be an integer")
+            raise TypeError("size must be an integer")
         
         """
-        Raise valueError if size is less than zero
+        if size is less than 0, 
+        raise a ValueError exception with the message
+        size must be >= 0
+        
         """
+
         if size < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError("size must be >=0")
         self.__size = size
+        
+    
