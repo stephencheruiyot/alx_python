@@ -52,7 +52,7 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
-    def integer_validator(self, width, height):
+    def integer_validator(self, name, value):
         """
         Validate if width and height are positive integers.
 
@@ -64,10 +64,10 @@ class Rectangle(BaseGeometry):
             TypeError: If width or height is not an integer.
             ValueError: If width or height is not a positive integer.
         """
-        if not isinstance(width, int) or not isinstance(height, int):
-            raise TypeError("{} must be an integer".format(height,width))
-        if width <= 0 or height <= 0:
-            raise ValueError("{} must be an integer".format(height, width))
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{value} must be greater than 0")
 
     def area(self):
         """
