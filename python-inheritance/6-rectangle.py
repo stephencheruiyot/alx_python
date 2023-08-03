@@ -36,7 +36,9 @@ class BaseGeometry:
         if not isinstance(value, int) or value <= 0:
             raise ValueError(f"{name} must be a positive integer.")
 
-
+"""
+Rectangle class that inherits from BaseGeometry.
+"""
 class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """
