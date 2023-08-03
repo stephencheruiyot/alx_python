@@ -4,6 +4,12 @@ A class BaseGeometry
 """
 
 class BaseGeometry:
+    """
+    A class BaseGeometry
+
+    """
+    
+    
     def area(self):
         """
         This method must be implemented by subclasses to calculate the area.
@@ -12,11 +18,17 @@ class BaseGeometry:
 
 """
         A class Rectangle
-        argument:BaseGeometry
-
-        
+        Arguments:Width,Height
+    
 """
 class Rectangle(BaseGeometry):
+    """
+        A class Rectangle
+        Arguments:Width,Height
+    
+    """
+    
+    
     def __init__(self, width, height):
         """
         Initializes a rectangle with the given width and height.
