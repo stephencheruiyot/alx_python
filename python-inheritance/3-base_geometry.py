@@ -4,7 +4,7 @@
 """
 
 class BaseGeometry:
-    pass
+    
     """
     An empty class representing a base geometry.
 
@@ -17,4 +17,5 @@ class BaseGeometry:
     Methods:
         None
     """
+    pass #To skip this funtion.
     
