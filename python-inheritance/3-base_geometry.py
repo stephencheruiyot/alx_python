@@ -3,7 +3,7 @@
   nor methods  
 """
 
-class BaseGeometry:
+class BaseGeometry():
     
     """
     An empty class representing a base geometry.
