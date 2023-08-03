@@ -11,7 +11,8 @@ def inherits_from(obj, a_class):
         a_class (class): The specified class to check inheritance from.
 
     Returns:
-        bool: True if the object is an instance of a class inherited from 'a_class', otherwise False.
+        bool: True if the object is an instance of 
+        a class inherited from 'a_class', otherwise False.
     """
     classes = type(obj).mro()
 
