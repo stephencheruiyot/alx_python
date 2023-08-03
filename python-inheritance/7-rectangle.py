@@ -1,10 +1,13 @@
 """
  A class BaseGeometry   
-
     
 """
 
 class BaseGeometry:
+    """
+    A class BaseGeometry
+    """
+    
     def area(self):
         """
         This method should be implemented by subclasses to calculate the area of a geometry.
