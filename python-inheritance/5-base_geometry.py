@@ -2,7 +2,6 @@
     
 A class BaseGeometry
 """
-
 class BaseGeometry:
     """
     A base class for geometry-related operations.
@@ -19,7 +18,7 @@ class BaseGeometry:
         """
         Raises an Exception to indicate that the area() method is not implemented in the subclass.
         """
-        raise Exception("area() is not implemented.")
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
