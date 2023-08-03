@@ -47,11 +47,16 @@ class Rectangle(BaseGeometry):
 """
        A class Square
        Arguments:Rectangle
-
         
  """
 
 class Square(Rectangle):
+    """
+       A class Square
+       
+        
+    """
+    
     def __init__(self, size):
         """
         Initializes a square with the given size.
