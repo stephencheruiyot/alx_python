@@ -1,84 +1,79 @@
 """
-A class BaseGeometry
-   
+ initialize base class   
+    
 """
 
 class BaseGeometry:
     """
-    Abstract base class representing geometric shapes with two sides 
+    Base class for geometrical shapes.
+
+    Methods:
+        area(): Abstract method to calculate the area of the shape.
     """
+
     def area(self):
         """
-        Calculates the area of the geometry.
-
-        Returns:
-            float: The area of the geometry.
+        Calculate the area of the shape.
+        This is an abstract method and should be implemented in the subclasses.
         """
-        raise NotImplementedError("Subclasses must implement this method.")
+        raise NotImplementedError("Subclasses must implement the area() method.")
 
-    def perimeter(self):
-        """
-        Calculates the perimeter of the geometry.
-
-        Returns:
-            float: The perimeter of the geometry.
-        """
-        raise NotImplementedError("Subclasses must implement this method.")
-
-    def integer_validator(self, value, name):
-        """
-        Validates if the given value is a positive integer.
-
-        Args:
-            value (int): The value to be validated.
-            name (str): The name of the value for error messages.
-
-        Raises:
-            TypeError: width must be an integer
-            ValueError: If the value is not a positive integer.
-        """
-        if not isinstance(value, int) or value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-        #raise ValueError("{name} must be greater than zero!")
-            
 """
-Rectangle class that inherits from BaseGeometry.
+ Rectangle class       
+
 """
 class Rectangle(BaseGeometry):
-        
     """
-Constructor for Rectangle instances.
+    Rectangle class, inherits from BaseGeometry.
+
+    Attributes:
+        __width (int): Private attribute representing the width of the rectangle.
+        __height (int): Private attribute representing the height of the rectangle.
+
+    Methods:
+        __init__(self, width, height): Constructor method for Rectangle.
     """
+
     def __init__(self, width, height):
         """
-        Initializes a Rectangle instance with given width and height.
+        Constructor for Rectangle.
 
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
+
+        Raises:
+            TypeError: If width or height is not an integer.
+            ValueError: If width or height is not a positive integer.
         """
+        self.__width = 0
+        self.__height = 0
+        self.integer_validator(width, height,int)
         self.__width = width
         self.__height = height
-        self.integer_validator(width, "width")
-        self.integer_validator(height, "height")
+
+    def integer_validator(self, width, height):
+        """
+        Validate if width and height are positive integers.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+
+        Raises:
+            TypeError: If width or height is not an integer.
+            ValueError: If width or height is not a positive integer.
+        """
+        if not isinstance(width, int) or not isinstance(height, int):
+            raise TypeError("{} must be an integer".format(height,width))
+        if width <= 0 or height <= 0:
+            raise ValueError("{} must be an integer".format(height, width))
 
     def area(self):
         """
-        Calculates the area of the rectangle.
+        Calculate the area of the rectangle.
 
         Returns:
             int: The area of the rectangle.
         """
         return self.__width * self.__height
-        """
-        Method to calculate the perimeter of the rectangle.
-        """
-
-    def perimeter(self):
-        """
-        Calculates the perimeter of the rectangle.
-
-        Returns:
-            int: The perimeter of the rectangle.
-        """
-        return 2 * (self.__width + self.__height)
