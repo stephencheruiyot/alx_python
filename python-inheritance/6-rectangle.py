@@ -34,11 +34,12 @@ class BaseGeometry:
             name (str): The name of the value for error messages.
 
         Raises:
+            TypeError: width must be an integer
             ValueError: If the value is not a positive integer.
         """
         if not isinstance(value, int) or value <= 0:
             raise TypeError(f"{name} must be an integer")
-
+        
 """
 Rectangle class that inherits from BaseGeometry.
 """
