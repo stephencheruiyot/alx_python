@@ -16,4 +16,5 @@ def inherits_from(obj, a_class):
     classes = type(obj).mro()
 
     # Check if 'a_class' is in the set of classes the object belongs to
-    return any(a_class is c for c in classes[1:])  # Start from index 1 to skip the object's own class
+    return any(a_class is c for c in classes[1:])  
+# Start from index 1 to skip the object's own class
