@@ -10,12 +10,12 @@ class BaseGeometry:
         """
         raise NotImplementedError("Subclasses must implement this method.")
 
-        """
+"""
         A class Rectangle
         argument:BaseGeometry
 
         
-        """
+"""
 class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """
@@ -32,12 +32,12 @@ class Rectangle(BaseGeometry):
         :return: Area of the rectangle
         """
         return self.width * self.height
-        """
+"""
        A class Square
        Arguments:Rectangle
 
         
-        """
+ """
 
 class Square(Rectangle):
     def __init__(self, size):
