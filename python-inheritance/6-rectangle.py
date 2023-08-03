@@ -4,6 +4,9 @@ A class BaseGeometry
 """
 
 class BaseGeometry:
+    """
+    Abstract base class representing geometric shapes with two sides 
+    """
     def area(self):
         """
         Calculates the area of the geometry.
@@ -40,6 +43,10 @@ class BaseGeometry:
 Rectangle class that inherits from BaseGeometry.
 """
 class Rectangle(BaseGeometry):
+        
+    """
+Constructor for Rectangle instances.
+    """
     def __init__(self, width, height):
         """
         Initializes a Rectangle instance with given width and height.
@@ -61,6 +68,9 @@ class Rectangle(BaseGeometry):
             int: The area of the rectangle.
         """
         return self.__width * self.__height
+        """
+        Method to calculate the perimeter of the rectangle.
+        """
 
     def perimeter(self):
         """
