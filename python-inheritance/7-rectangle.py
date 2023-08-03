@@ -28,8 +28,18 @@ class BaseGeometry:
         if not isinstance(value, int) or value <= 0:
             raise ValueError(f"{name} must be a positive integer.")
 
-
+"""
+  A class that inherits from base class      
+        
+"""
 class Rectangle(BaseGeometry):
+    """
+    Represents an immutable rectangular region in two-dimensional space.
+
+    
+    """
+    
+    
     def __init__(self, width, height):
         """
         Initializes a Rectangle instance with the given width and height.
