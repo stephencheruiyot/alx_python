@@ -1,79 +1,76 @@
 """
- initialize base class   
-    
+base class BaseGeometry
 """
 
 class BaseGeometry:
     """
-    Base class for geometrical shapes.
-
-    Methods:
-        area(): Abstract method to calculate the area of the shape.
+    base class BaseGeometry
     """
 
+    
     def area(self):
-        """
-        Calculate the area of the shape.
-        This is an abstract method and should be implemented in the subclasses.
-        """
-        raise NotImplementedError("Subclasses must implement the area() method.")
+        raise NotImplementedError("Subclasses must implement area() method")
+
+    def perimeter(self):
+        raise NotImplementedError("Subclasses must implement perimeter() method")
 
 """
- Rectangle class       
-
+sub class Rectangle
 """
 class Rectangle(BaseGeometry):
     """
-    Rectangle class, inherits from BaseGeometry.
-
-    Attributes:
-        __width (int): Private attribute representing the width of the rectangle.
-        __height (int): Private attribute representing the height of the rectangle.
-
-    Methods:
-        __init__(self, width, height): Constructor method for Rectangle.
+    sub class Rectangle
     """
-
+    
+    
     def __init__(self, width, height):
         """
-        Constructor for Rectangle.
+        Initialize a Rectangle object with width and height.
 
-        Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
+        Parameters:
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
 
         Raises:
-            TypeError: If width or height is not an integer.
-            ValueError: If width or height is not a positive integer.
+        ValueError: If width or height is not a positive integer.
         """
-        self.__width = 0
-        self.__height = 0
-        self.integer_validator(width, height,int)
+        self.__width = self.__height = None
+        self.integer_validator(width, "width")
+        self.integer_validator(height, "height")
         self.__width = width
         self.__height = height
-
-    def integer_validator(self, name, value):
-        """
-        Validate if width and height are positive integers.
-
-        Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
-
-        Raises:
-            TypeError: If width or height is not an integer.
-            ValueError: If width or height is not a positive integer.
-        """
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{value} must be greater than 0")
 
     def area(self):
         """
         Calculate the area of the rectangle.
 
         Returns:
-            int: The area of the rectangle.
+        int: The area of the rectangle.
         """
         return self.__width * self.__height
+
+    def perimeter(self):
+        """
+        Calculate the perimeter of the rectangle.
+
+        Returns:
+        int: The perimeter of the rectangle.
+        """
+        return 2 * (self.__width + self.__height)
+
+    def integer_validator(self, value, name):
+        """
+        Validate if the value is a positive integer.
+
+        Parameters:
+        value (int): The value to be validated.
+        name (str): The name of the value (used for error message).
+
+        Raises:
+        TypeError: must be an integer
+        ValueError: If the value is not a positive integer.
+        """
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer.".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
