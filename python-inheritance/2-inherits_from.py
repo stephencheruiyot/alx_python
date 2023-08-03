@@ -1,3 +1,6 @@
+"""
+A defining function.
+"""
 def inherits_from(obj, a_class):
     """
     Check if the object is an instance of a class
