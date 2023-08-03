@@ -37,7 +37,7 @@ class BaseGeometry:
             ValueError: If the value is not a positive integer.
         """
         if not isinstance(value, int) or value <= 0:
-            raise ValueError(f"{name} must be an integer.")
+            raise TypeError(f"{name} must be an integer.")
 
 """
 Rectangle class that inherits from BaseGeometry.
