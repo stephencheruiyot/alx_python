@@ -26,7 +26,7 @@ class BaseGeometry:
             ValueError: If the value is not a positive integer.
         """
         if not isinstance(value, int) or value <= 0:
-            raise TypeError(f"{name} must be an integer.")
+            raise TypeError(f"{name} must be an integer")
 
 """
   A class that inherits from base class      
