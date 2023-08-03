@@ -1,15 +1,10 @@
 """
 A class BaseGeometry
-
 """
-
 class BaseGeometry:
     """
     A class BaseGeometry
-
     """
-    
-    
     def area(self):
         """
         This method must be implemented by subclasses to calculate the area.
@@ -19,16 +14,13 @@ class BaseGeometry:
 """
         A class Rectangle
         Arguments:Width,Height
-    
 """
 class Rectangle(BaseGeometry):
     """
         A class Rectangle
         Arguments:Width,Height
-    
     """
-    
-    
+       
     def __init__(self, width, height):
         """
         Initializes a rectangle with the given width and height.
@@ -49,14 +41,10 @@ class Rectangle(BaseGeometry):
        Arguments:Rectangle
         
  """
-
 class Square(Rectangle):
     """
        A class Square
-       
-        
     """
-    
     def __init__(self, size):
         """
         Initializes a square with the given size.
@@ -75,5 +63,5 @@ class Square(Rectangle):
         :raises ValueError: If the value is not a positive integer
         """
         if not isinstance(value, int) or value <= 0:
-            raise ValueError("Size must be a positive integer.")
+            raise TypeError("size must be an integer")
 
