@@ -12,13 +12,13 @@ class BaseGeometry:
         raise NotImplementedError("Subclasses must implement this method.")
 
 """
-        A class Rectangle
-        Arguments:Width,Height
+A class Rectangle
+Arguments:Width,Height
 """
 class Rectangle(BaseGeometry):
     """
-        A class Rectangle
-        Arguments:Width,Height
+    A class Rectangle
+    Arguments:Width,Height
     """
        
     def __init__(self, width, height):
@@ -37,13 +37,13 @@ class Rectangle(BaseGeometry):
         """
         return self.width * self.height
 """
-       A class Square
-       Arguments:Rectangle
+A class Square
+Arguments:Rectangle
         
  """
 class Square(Rectangle):
     """
-       A class Square
+    A class Square
     """
     def __init__(self, size):
         """
