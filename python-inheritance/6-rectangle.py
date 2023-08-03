@@ -80,3 +80,4 @@ Constructor for Rectangle instances.
             int: The perimeter of the rectangle.
         """
         return 2 * (self.__width + self.__height)
+print(issubclass(Rectangle, BaseGeometry))
