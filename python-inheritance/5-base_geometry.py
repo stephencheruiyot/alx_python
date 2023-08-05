@@ -9,7 +9,7 @@ class BaseGeometryMetaClass(type):
     
 A class BaseGeometry
 """
-class BaseGeometry(metaclass=BaseGeometryMetaClass):
+class BaseGeometry(metaclass = BaseGeometryMetaClass):
     """
     A base class for geometry-related operations.
 
