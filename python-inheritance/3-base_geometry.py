@@ -6,16 +6,8 @@
 class BaseGeometry():
     
     """
-    An empty class representing a base geometry.
-
-    This class will serve as the base 
-    for other geometry-related classes.
-
-    Attributes:
-        None
-
-    Methods:
-        None
+    def a function __dir__ to get access to the super attributes
     """
-    pass #To skip this funtion.
-    
+    def __dir__(cls):
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+        
