@@ -24,7 +24,7 @@ class BaseGeometry(metaclass=BaseGeometryMetaClass):
     def a method that excludes __init_subclass__
     """
     def __dir__(cls):
-        return [attribute for attribute in super.__dir__() if attribute != '__init_sublass__']
+        return [attribute for attribute in super().__dir__() if attribute != '__init_sublass__']
 
     def area(self):
         """
