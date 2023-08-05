@@ -13,6 +13,11 @@ class BaseGeometry:
     integer_validator(name, value)
         Validates the input value as an integer, raising appropriate exceptions if not valid.
     """
+    """
+    def a method that excludes __init_subclass__
+    """
+    def __dir__(cls):
+        return [attribute for attribute in super.__dir__ if attribute != "__init_sublass__"]
 
     def area(self):
         """
