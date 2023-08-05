@@ -2,14 +2,15 @@
 A class to remove the attribute
     
 """
-class BaseGeometryMetaClass(type):
+class MetaClass(type):
     def __dir__(cls):
-        return [ attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 """
     
 A class BaseGeometry
 """
-class BaseGeometry(metaclass = BaseGeometryMetaClass):
+class BaseGeometry(metaclass = MetaClass):
+    
     """
     A base class for geometry-related operations.
 
