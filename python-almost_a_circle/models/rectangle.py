@@ -41,7 +41,7 @@ class Base:
             self.id = Base.__nb_objects
             
 
-# models/rectangle.py
+    # models/rectangle.py
 
     class Rectangle(Base):
         """Rectangle class that inherits from Base.
