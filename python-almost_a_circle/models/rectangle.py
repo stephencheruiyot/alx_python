@@ -93,6 +93,6 @@ class Rectangle(Base):
     def y(self, value):
         """setter for the y co-ordinate"""
         if value <= 0:
-            raise("x must be >= 0")
+            raise ValueError("x must be >= 0")
         self.__y = value
        
