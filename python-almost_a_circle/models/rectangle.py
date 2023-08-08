@@ -32,21 +32,12 @@ class Rectangle(Base):
     y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
     id (int, optional): The ID of the rectangle. If not provided, it will be set by the Base class.
 
-    Example:
-    >>> rect = Rectangle(10, 5, 2, 3)
-    >>> rect.width
-    10
-    >>> rect.height
-    5
-    >>> rect.x
-    2
-    >>> rect.y
-    3
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize the Rectangle object with provided dimensions and position."""
         super().__init__(id)
+        """call the super class to set the id if no value is given"""
         self.__width = width
         self.__height = height
         self.__x = x
@@ -54,36 +45,55 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """int: Get or set the width of the rectangle."""
+        """int: Getter for the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """setter for width attribute"""
+        if not isinstance(value, int):
+            raise TypeError("Width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0" )
         self.__width = value
 
     @property
     def height(self):
-        """int: Get or set the height of the rectangle."""
+        """int: Getter for the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """setter for the height"""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
+        
 
     @property
     def x(self):
-        """int: Get or set the x-coordinate of the rectangle's position."""
+        """int: Getter for the x-coordinate of the rectangle's position."""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """setter for the x variable"""
+        if value <= 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
     def y(self):
-        """int: Get or set the y-coordinate of the rectangle's position."""
+        """int: Getter for the y-coordinate of the rectangle's position."""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """setter for the y co-ordinate"""
+        if value <= 0:
+            raise("x must be >= 0")
+        
         self.__y = value
+       
