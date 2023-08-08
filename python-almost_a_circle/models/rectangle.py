@@ -80,7 +80,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """setter for the x variable"""
-        if value <= 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
@@ -92,7 +92,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """setter for the y co-ordinate"""
-        if value <= 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__y = value
        
