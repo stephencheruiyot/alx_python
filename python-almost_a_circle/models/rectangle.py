@@ -1,9 +1,7 @@
-# models/rectangle.py
 """
- rectangle.py - contains the class Rectangle that inherits from Base class   
+rectangle.py - contains the class Rectangle that inherits from Base class   
+"""
 
-    
-"""
 from models.base import Base
 
 class Rectangle(Base):
@@ -31,13 +29,11 @@ class Rectangle(Base):
     x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
     y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
     id (int, optional): The ID of the rectangle. If not provided, it will be set by the Base class.
-
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize the Rectangle object with provided dimensions and position."""
-        super().__init__(id)
-        """call the super class to set the id if no value is given"""
+        super().__init__(id)  # Call superclass constructor first
         self.__width = width
         self.__height = height
         self.__x = x
@@ -51,10 +47,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """setter for width attribute"""
-        if value != (value, int):
-            raise TypeError("width must be an integer")
+        if not isinstance(value, int):
+            raise TypeError("Width must be an integer")
         if value <= 0:
-            raise ValueError("width must be > 0" )
+            raise ValueError("Width must be > 0")
         self.__width = value
 
     @property
@@ -70,7 +66,6 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-        
 
     @property
     def x(self):
@@ -93,6 +88,5 @@ class Rectangle(Base):
     def y(self, value):
         """setter for the y co-ordinate"""
         if value < 0:
-            raise ValueError("x must be >= 0")
+            raise ValueError("y must be >= 0")
         self.__y = value
-       
