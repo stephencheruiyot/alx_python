@@ -111,3 +111,23 @@ class Rectangle(Base):
         """Return a string representation of the rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self,*args):
+        '''Update the values of the Rectangle class
+        
+        Args:
+             *args: Variable number of arguments for updating the attributes in the order:
+                    id, width, height, x, y.
+        
+        '''
+        attrs = ['id','width','height','x', 'y']
+        for idx, arg in enumerate(args):
+            setattr(self,attrs[idx],arg)
+        
+            
+        
+       
+
+
+
+               
