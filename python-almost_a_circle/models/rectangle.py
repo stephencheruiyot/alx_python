@@ -40,53 +40,53 @@ class Rectangle(Base):
         self.__y = y
 
     @property
-    def width(self,int):
+    def width(self):
         """int: Getter for the width of the rectangle."""
         return self.__width
 
     @width.setter
-    def width(self, value,int):
+    def width(self, value):
         """setter for width attribute"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if value <= int(0):
+        if int <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
     @property
-    def height(self, int):
+    def height(self):
         """int: Getter for the height of the rectangle."""
         return self.__height
 
     @height.setter
-    def height(self, value, int):
+    def height(self, value):
         """setter for the height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if value <= int(0):
+        if int <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
     @property
-    def x(self, int):
+    def x(self):
         """int: Getter for the x-coordinate of the rectangle's position."""
         return self.__x
 
     @x.setter
-    def x(self, value,int):
+    def x(self, value):
         """setter for the x variable"""
-        if value < int(0):
+        if int < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
-    def y(self, int):
+    def y(self):
         """int: Getter for the y-coordinate of the rectangle's position."""
         return self.__y
 
     @y.setter
-    def y(self, value, int):
+    def y(self, value):
         """setter for the y co-ordinate"""
-        if value < int(0):
+        if int < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
