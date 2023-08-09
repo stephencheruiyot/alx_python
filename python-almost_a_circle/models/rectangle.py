@@ -112,17 +112,24 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
-    def update(self,*args):
+    def update(self,*args, **kwargs):
         '''Update the values of the Rectangle class
         
         Args:
              *args: Variable number of arguments for updating the attributes in the order:
                     id, width, height, x, y.
+        kwargs: Keyword arguments for updating the attributes. Allowed keys are 'id', 'width', 'height', 'x', and 'y'.
         
         '''
         attrs = ['id','width','height','x', 'y']
+        #update using positional arguments
         for idx, arg in enumerate(args):
             setattr(self,attrs[idx],arg)
+            
+        #update using keyword arguments
+        for key, value in kwargs.items(): 
+            if key in attrs:
+                setattr(self, key, value)
         
             
         
