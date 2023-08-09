@@ -1,3 +1,13 @@
+"""
+   A module that Sends a request to the given URL and displays the value of the X-Request-Id variable in the response header.
+
+    Args:
+        url (str): The URL to send the request to.
+
+    Returns:
+        str: The value of the X-Request-Id variable in the response header, or an error message.
+    """
+
 import sys
 import requests
 
