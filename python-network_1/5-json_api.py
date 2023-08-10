@@ -11,35 +11,33 @@ Only the 'requests' and 'sys' packages are used.
 import requests
 import sys
 
-def search_user(letter):
+def main():
+    """ Sends a POST request to http://0.0.0.0:5000/search_user and processes the response
     """
-    Sends a POST request to the specified URL with the provided letter as the 'q' parameter.
-    Prints the user information if available, or appropriate error messages.
-    """
+    if len(sys.argv) == 1:
+        q = ""
+    else:
+        q = sys.argv[1]
+    
     url = "http://0.0.0.0:5000/search_user"
-    data = {'q': letter}
+    data = {"q": q}
 
+    response = requests.post(url, data=data)
     try:
-        response = requests.post(url, data=data)
         response_json = response.json()
-
+        
         if response_json:
-            user_id = response_json.get('id')
-            user_name = response_json.get('name')
+            user_id = response_json.get("id")
+            user_name = response_json.get("name")
+            
             if user_id is not None and user_name is not None:
-                print("[{}] {}".format(user_id, user_name))
+                print(f"[{user_id}] {user_name}")
             else:
-                print("No result")
+                print("Not a valid JSON")
         else:
             print("No result")
-
-    except requests.exceptions.RequestException as e:
-        print(e)
     except ValueError:
         print("Not a valid JSON")
 
 if __name__ == "__main__":
-    if len(sys.argv) == 1:
-        search_user("")
-    elif len(sys.argv) == 2:
-        search_user(sys.argv[1])
+    main()
