@@ -21,7 +21,7 @@ def main():
         if x_request_id:
             print(x_request_id)
         else:
-            print("X-Request-Id header not found in the response.")
+            print("None")
             
     except requests.RequestException as e:
         print("An error occurred: {}".format(e))
