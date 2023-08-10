@@ -34,7 +34,7 @@ def main():
     url = sys.argv[1]
     email = sys.argv[2]
 
-    print("Your email is:", email)
+    print("Email:", email)
     
     response_body = send_post_request(url, email)
     
