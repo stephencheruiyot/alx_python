@@ -37,7 +37,7 @@ def main():
     print("Your email is:", email)
     
     response_body = send_post_request(url, email)
-    print(response_body)
+    
 
 if __name__ == "__main__":
     main()
