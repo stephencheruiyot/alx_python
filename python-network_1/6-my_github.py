@@ -25,6 +25,8 @@ import requests
 import sys
 
 def get_user_id(username, personal_access_token):
+    username = "stephencheruiyot"
+    personal_access_token = "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"
     """
     Get the user ID using GitHub API.
 
