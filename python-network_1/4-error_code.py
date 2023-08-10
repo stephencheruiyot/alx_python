@@ -1,23 +1,32 @@
 #!/usr/bin/python3
-""" Script to send a request to a URL and display the response body or error code
+""" HTTP Request Script
 """
+
 import requests
 import sys
 
-def main():
-    """ Main function to perform the request and handle the response
+def make_request(url):
+    """ Sends a request to the given URL and displays the response body.
+
+    Args:
+        url (str): The URL to send the request to.
+
+    Returns:
+        None
     """
+    try:
+        response = requests.get(url)
+        print(response.text)
+
+        if response.status_code >= 400:
+            print(f"Error code: {response.status_code}")
+    except requests.RequestException as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: {} <URL>".format(sys.argv[0]))
+        print("Usage: python script_name.py <URL>")
         sys.exit(1)
 
     url = sys.argv[1]
-    response = requests.get(url)
-
-    if response.status_code >= 400:
-        print("Error code:", response.status_code)
-    
-        
-
-if __name__ == "__main__":
-    main()
+    make_request(url)
