@@ -1,6 +1,3 @@
-import requests
-import sys
-
 """
     Main function that takes a URL as input, sends a request to the URL,
     and displays the body of the response. If the HTTP status code is
@@ -9,6 +6,9 @@ import sys
 
     Usage: python 4-error_code.py <URL>
 """
+
+import requests
+import sys
 
 def main():
     """
