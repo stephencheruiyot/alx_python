@@ -25,8 +25,7 @@ import requests
 import sys
 
 def get_user_id(username, personal_access_token):
-    username = "stephencheruiyot"
-    personal_access_token = "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"
+    
     """
     Get the user ID using GitHub API.
 
@@ -38,7 +37,7 @@ def get_user_id(username, personal_access_token):
         str: User ID if successful, otherwise None
     """
     url = f'https://api.github.com/user'
-    headers = {'Authorization': f'Basic {username}:{personal_access_token}'}
+    headers = {'Authorization': f'Bearer {personal_access_token}'}
     
     response = requests.get(url, headers=headers)
     
@@ -59,6 +58,11 @@ def main():
     user_id = get_user_id(username, personal_access_token)
     
     print(user_id)
+    
+    if user_id is not None:
+        print(user_id)
+    else:
+        print("Error: Unable to fetch user ID")
 
 if __name__ == "__main__":
     main()
