@@ -9,7 +9,9 @@ from sqlalchemy.orm import sessionmaker
 # Create an instance of the declarative base
 Base = declarative_base()
 
+#create a class state
 class State(Base):
+    
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, nullable=False)
