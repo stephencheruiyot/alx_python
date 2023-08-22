@@ -15,7 +15,10 @@ if __name__ == "__main__":
         database = sys.argv[3]
 
         # Create an engine and bind it to the base
-        engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost/{database}', pool_pre_ping=True)
+        engine = create_engine(
+            f'mysql+mysqldb://{username}:{password}@localhost/{database}',
+            pool_pre_ping=True
+        )
         Base.metadata.create_all(engine)
 
         # Create a session to interact with the database
