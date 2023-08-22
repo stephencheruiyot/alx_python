@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-"""Start link class to table in database 
+"""Link Class to Database Table
+
+This script defines a State class that links to a MySQL table named 'states'.
+It uses SQLAlchemy to interact with the database.
+
+Usage:
+    Usage: python script.py <username> <password> <database>
 """
+
 import sys
 from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -9,11 +16,12 @@ from sqlalchemy.orm import sessionmaker
 # Create an instance of the declarative base
 Base = declarative_base()
 
-#class state
+# Define the State class
 class State(Base):
-    #create a class state
+    """State Class
     
-    
+    Represents a state entity in the 'states' table.
+    """
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, nullable=False)
@@ -27,6 +35,7 @@ if __name__ == "__main__":
         password = sys.argv[2]
         database = sys.argv[3]
 
+        # Create an engine to connect to the database
         engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost/{database}', pool_pre_ping=True)
 
         # Create a session to interact with the database
