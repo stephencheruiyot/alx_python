@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker
 # Create an instance of the declarative base
 Base = declarative_base()
 
-
+#class state
 class State(Base):
     #create a class state
     
