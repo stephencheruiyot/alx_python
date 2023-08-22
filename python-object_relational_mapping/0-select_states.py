@@ -22,6 +22,10 @@ if __name__ == "__main__":
     )
     """
     cursor.execute(create_table_query)
+    
+    # Commit changes to the database
+    db.commit()
+
 
     # Insert data into the "states" table
     insert_data_query = """
@@ -37,6 +41,9 @@ if __name__ == "__main__":
     # Execute the query to select states in ascending order by states.id
     select_query = "SELECT * FROM states ORDER BY id ASC"
     cursor.execute(select_query)
+    
+      # Commit changes to the database
+    db.commit()
 
     # Fetch all the rows from the result set
     results = cursor.fetchall()
