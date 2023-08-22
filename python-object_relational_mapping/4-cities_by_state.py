@@ -13,13 +13,13 @@ if __name__ == "__main__":
         port=3306,
         user="root",
         passwd="Folio9470m",
-        db="hbtn_0e_0_usa"
+        db="hbtn_0e_4_usa"
     )
 
     # Create a cursor object to interact with the database
     cursor = db.cursor()
 
-    # Execute a single query to retrieve cities with their corresponding states
+    #Execute a single query to retrieve cities with their corresponding states
     query = (
         "SELECT cities.id, cities.name, states.name "
         "FROM cities "
