@@ -18,19 +18,14 @@ def list_cities_by_state(username, password, database, state_name):
     # Create a cursor to execute SQL queries
     cursor = conn.cursor()
 
-    # Execute the SQL query to fetch cities by state name using parameterized query
-    query = "SELECT cities.id, cities.name, states.name \
-             FROM cities \
-             INNER JOIN states ON cities.state_id = states.id \
-             WHERE states.name = %s \
-             ORDER BY cities.id ASC"
-    
+    # Execute the SQL query to fetch cities of the given state
+    query = "SELECT cities.name FROM cities JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC"
     cursor.execute(query, (state_name,))
 
     # Fetch and display the results
     results = cursor.fetchall()
-    for row in results:
-        print(row)
+    city_names = ', '.join([row[0] for row in results])
+    print(city_names)
 
     # Close the cursor and the connection
     cursor.close()
