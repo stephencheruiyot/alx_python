@@ -20,9 +20,8 @@ def search_states_safe(username, password, database, state_name):
     cursor = conn.cursor()
 
     # Execute the SQL query to fetch matching states 
-    query =("SELECT * FROM states" 
-            "WHERE name = %s ORDER BY states.id ASC"
-            )
+    query ="SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
+            
     cursor.execute(query, (state_name,))
 
     # Fetch and display the results
