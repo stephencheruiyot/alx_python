@@ -43,3 +43,4 @@ if __name__ == "__main__":
         database = sys.argv[3]
         state_name = sys.argv[4]
         search_states_safe(username, password, database, state_name)
+        
