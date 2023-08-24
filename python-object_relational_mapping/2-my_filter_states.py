@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-Script that takes in an argument and displays all values in the states
-table of hbtn_0e_0_usa where name matches the argument.
+Script that takes in an argument and
+displays all values in the states
+table of hbtn_0e_0_usa where
+name matches the argument.
 """
 
 import MySQLdb
@@ -21,11 +23,18 @@ if __name__ == "__main__":
 
     # Connect to the MySQL server
     try:
-        db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database_name)
+        db = MySQLdb.connect(host="localhost",
+                             port=3306, user=username,
+                             passwd=password,
+                             db=database_name)
         cursor = db.cursor()
 
         # Create the SQL query using the user input
-        query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
+        query = (
+            "SELECT * FROM states "
+            "WHERE name LIKE BINARY %s "
+            "ORDER BY id ASC"
+        )
         cursor.execute(query, (state_name,))
 
         # Fetch and display the results
