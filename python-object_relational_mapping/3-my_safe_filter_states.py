@@ -1,6 +1,7 @@
 import MySQLdb
 import sys
 
+
 def search_states_safe(username, password, database, state_name):
     # Connect to the MySQL server
     try:
@@ -18,8 +19,10 @@ def search_states_safe(username, password, database, state_name):
     # Create a cursor to execute SQL queries
     cursor = conn.cursor()
 
-    # Execute the SQL query to fetch matching states using parameterized query
-    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
+    # Execute the SQL query to fetch matching states 
+    query =("SELECT * FROM states" 
+            "WHERE name = %s ORDER BY states.id ASC"
+            )
     cursor.execute(query, (state_name,))
 
     # Fetch and display the results
