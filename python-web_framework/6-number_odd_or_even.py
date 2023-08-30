@@ -33,7 +33,14 @@ def number(n):
 # Route to display an HTML page with "<n> is even|odd" inside an H1 tag
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
-    return render_template('6-number_odd_or_even.html', n=n)
+    return render_template('5-number.html', n=n)
 
+@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
+def number_odd_or_even(n):
+    if n % 2 == 0:
+        return render_template('6-number_odd_or_even.html', n=n, odd_or_even='even')
+    else:
+        return render_template('6-number_odd_or_even.html', n=n, odd_or_even='odd')
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
