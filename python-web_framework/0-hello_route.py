@@ -9,6 +9,7 @@ app = Flask(__name__)
 def hello_hbnb():
     return "Hello HBNB!"
 
+# Main entry point of the script
 if __name__ == '__main__':
     # Start the Flask web application on 0.0.0.0, port 5000
     app.run(host='0.0.0.0', port=5000)
