@@ -1,4 +1,7 @@
-#Flask Web Application
+"""Flask Web Application
+This is a simple Flask web application that
+displays "Hello HBNB!" when you access the root URL.
+"""
 from flask import Flask
 
 # Create a Flask web application
