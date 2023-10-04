@@ -1,7 +1,8 @@
-import requests
 import csv
-import sys
 import os
+import requests
+import sys
+
 
 # Base URL for the JSONPlaceholder API
 BASE_URL = "https://jsonplaceholder.typicode.com"
