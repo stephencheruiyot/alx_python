@@ -1,48 +1,39 @@
-import csv
 import requests
-import sys
+import csv
 
-def get_employee_info(employee_id):
-    user_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
+def get_employee_todo_progress(employee_id):
+    # Get employee details
+    user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     response = requests.get(user_url)
-    user_data = response.json()
-    return user_data
+    employee_data = response.json()
+    employee_name = employee_data.get("name")
 
-def get_todo_list(employee_id):
-    todo_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}/todos'
+    # Get employee's todo list
+    todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
     response = requests.get(todo_url)
-    todo_data = response.json()
-    return todo_data
+    todos = response.json()
 
-def export_to_csv(employee_id, user_info, todo_list):
-    filename = f'{employee_id}.csv'
-    with open(filename, 'w', newline='') as csvfile:
-        csv_writer = csv.writer(csvfile)
-        csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
-        for task in todo_list:
-            csv_writer.writerow([employee_id, user_info["username"], task["completed"], task["title"]])
+    # Count completed tasks
+    completed_tasks = [todo for todo in todos if todo.get("completed")]
+    total_tasks = len(todos)
+    completed_count = len(completed_tasks)
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
-        sys.exit(1)
-    
-    employee_id = int(sys.argv[1])
-    
-    user_info = get_employee_info(employee_id)
-    todo_list = get_todo_list(employee_id)
-    
-    completed_tasks = [task for task in todo_list if task["completed"]]
-    total_tasks = len(todo_list)
-    
-    print("Employee {} is done with tasks({}/{})".format(
-        user_info["name"],
-        len(completed_tasks),
-        total_tasks
-    ))
-    
+    # Display employee's TODO list progress
+    print("Employee {} is done with tasks ({}/{}):".format(employee_name, completed_count, total_tasks))
     for task in completed_tasks:
         print("\t {}".format(task["title"]))
-    
-    export_to_csv(employee_id, user_info, todo_list)
-    print(f"Data exported to {employee_id}.csv")
+
+    # Export data to CSV
+    export_to_csv(employee_id, employee_name, todos)
+
+def export_to_csv(employee_id, employee_name, todos):
+    csv_filename = f"{employee_id}.csv"
+    with open(csv_filename, mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+        for todo in todos:
+            writer.writerow([employee_id, employee_name, todo["completed"], todo["title"]])
+
+if __name__ == "__main__":
+    employee_id = int(input("Enter the employee ID: "))
+    get_employee_todo_progress(employee_id)
