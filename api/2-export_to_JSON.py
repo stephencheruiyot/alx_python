@@ -1,7 +1,7 @@
 import requests
 import json
 import sys
-
+#module to get employee progress
 def get_employee_todo_progress(employee_id):
     # Define the API endpoints
     todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
