@@ -42,7 +42,7 @@ def get_employee_todo_progress(employee_id):
     # Display titles of completed tasks
     for todo in todos_data:
         if todo["completed"]:
-            print("\t{}" ''.format(todo["title"]))
+            print("\t {}".format(todo["title"]))
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
