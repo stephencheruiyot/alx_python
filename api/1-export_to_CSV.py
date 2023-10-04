@@ -1,6 +1,7 @@
 import csv
 import requests
 import sys
+import os
 
 # Define the base URL for the API
 BASE_URL = "https://jsonplaceholder.typicode.com"
@@ -65,7 +66,10 @@ def main():
                 print("\t {}".format(todo["title"]))
         
         export_to_csv(employee_id, employee_name, todos)
-        print(f"Data exported to {employee_id}.csv")
+        if os.path.exists(f"{employee_id}.csv"):
+            print(f"Data exported to {employee_id}.csv")
+        else:
+            print(f"No CSV file found for employee {employee_id}.")
 
 if __name__ == "__main__":
     main()
