@@ -1,5 +1,6 @@
-import requests
 import csv
+import requests
+
 
 # Constants
 BASE_URL = "https://jsonplaceholder.typicode.com"
