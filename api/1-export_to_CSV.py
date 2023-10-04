@@ -3,7 +3,6 @@ import os
 import requests
 import sys
 
-
 # Base URL for the JSONPlaceholder API
 BASE_URL = "https://jsonplaceholder.typicode.com"
 
@@ -36,12 +35,11 @@ def main(employee_id):
 
     # Export data to CSV
     csv_filename = f"{employee_id}.csv"
-    file_exists = os.path.exists(csv_filename)
 
     with open(csv_filename, "a", newline="") as csv_file:
         fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        if not file_exists:
+        if os.path.getsize(csv_filename) == 0:  # Check if the file is empty
             writer.writeheader()
         for todo in todos_data:
             writer.writerow({
