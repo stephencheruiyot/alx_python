@@ -1,37 +1,42 @@
 #!/usr/bin/python3
 """
-Retrieves employee TODO list progress using a REST API
+Checks student output for returning information from a REST API
 """
 
 import requests
 import sys
 
+# URLs for the REST API endpoints
 users_url = "https://jsonplaceholder.typicode.com/users"
-todos_url = "https://jsonplaceholder.typicode.com/users/{}/todos"
+todos_url = "https://jsonplaceholder.typicode.com/todos"
 
-def get_employee_todo_progress(employee_id):
+def check_tasks(employee_id):
+    """Fetch user name and check formatting of tasks"""
+
     try:
-        # Fetch employee information
-        user_response = requests.get(users_url + f'/{employee_id}')
-        user_data = user_response.json()
+        # Fetch user data from the REST API
+        user_data = requests.get(users_url + f'/{employee_id}').json()
         employee_name = user_data.get('name')
 
-        # Fetch TODO list for the employee
-        todo_response = requests.get(todos_url.format(employee_id))
-        todo_data = todo_response.json()
+        # Fetch task data from the REST API
+        task_data = requests.get(todos_url).json()
 
-        # Count completed and total tasks
-        total_tasks = len(todo_data)
-        completed_tasks = sum(1 for todo in todo_data if todo['completed'])
+        # Initialize variables to count tasks and track formatting
+        filename = 'student_output'
+        count = 0
 
-        # Print progress
-        print(f'Employee {employee_name} is done with tasks({completed_tasks}/{total_tasks}):')
+        with open(filename, 'r') as f:
+            next(f)  # Skip the header line
+            for line in f:
+                count += 1
+                if line[0] == '\t' and line[1] == ' ' and line[-1] == '\n':
+                    print(f"Task {count} Formatting: OK")
+                else:
+                    print(f"Task {count} Formatting: Incorrect")
 
-        # Print completed task titles
-        for todo in todo_data:
-            if todo['completed']:
-                print(f'\t{todo["title"]}')
-    
+        # Print user information
+        print(f"Employee {employee_name} tasks checked")
+
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
     except KeyError:
@@ -42,4 +47,4 @@ if __name__ == "__main__":
         print("Usage: python script.py <employee_id>")
     else:
         employee_id = int(sys.argv[1])
-        get_employee_todo_progress(employee_id)
+        check_tasks(employee_id)
