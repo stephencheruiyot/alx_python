@@ -1,8 +1,20 @@
-#module to get employee progress
+"""
+Employee Progress Module
+
+This module provides functions to retrieve and analyze employee progress based on their
+TODO list from a JSON API. It fetches the employee's tasks, counts completed tasks, and
+exports completed tasks to a JSON file.
+
+Usage:
+    $ python script.py <employee_id>
+
+Author: stephen cheruiyot
+"""
+
 import requests
 import json
 import sys
-#module to get employee progress
+
 def get_employee_todo_progress(employee_id):
     # Define the API endpoints
     todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
