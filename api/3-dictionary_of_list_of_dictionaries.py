@@ -1,5 +1,6 @@
-import requests
 import json
+import requests
+
 
 def get_employee_info(employee_id):
     # Define the base URL for the JSONPlaceholder API
