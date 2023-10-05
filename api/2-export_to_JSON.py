@@ -1,5 +1,5 @@
-import requests
 import json
+import requests
 import sys
 
 def get_employee_info(employee_id):
