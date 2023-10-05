@@ -21,7 +21,7 @@ def fetch_employee_data(employee_id):
     print("Employee {} is done with tasks ({}/{}):".format(employee_name, completed_tasks, total_tasks))
     for task in todo_list:
         if task['completed']:
-            print("\t{} ({})".format(task['title'], task['id']))
+            print("\t {} ({})".format(task['title'], task['id']))
 
 if __name__ == "__main__":
     import sys
