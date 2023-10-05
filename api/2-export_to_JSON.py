@@ -1,3 +1,7 @@
+'''
+module that exports data to JSON and saves to  file
+
+'''
 import json
 import requests
 import sys
