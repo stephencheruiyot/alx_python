@@ -26,7 +26,7 @@ def get_employee_info(employee_id):
     print("Employee {} is done with tasks({}/{}):".format(employee_name, completed_tasks, total_tasks))
     for todo in todos_data:
         if todo['completed']:
-            print("\t{}".format(todo['title']))
+            print("\t {}".format(todo['title']))
 
     # Export data to CSV
     export_to_csv(employee_id, employee_name, todos_data)
