@@ -1,44 +1,42 @@
 import requests
 import sys
 
-def get_employee_data(employee_id):
-    # Get employee details
+def get_employee_info(employee_id):
+    # Define the API endpoints
     employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    response = requests.get(employee_url)
-    employee_data = response.json()
-    
-    # Get TODO list for the employee
     todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
-    response = requests.get(todos_url)
-    todos = response.json()
-    
-    return employee_data, todos
 
-def main():
+    # Send requests to the API
+    employee_response = requests.get(employee_url)
+    todos_response = requests.get(todos_url)
+
+    # Check if the requests were successful
+    if employee_response.status_code != 200 or todos_response.status_code != 200:
+        print("Failed to fetch data from the API")
+        return
+
+    # Parse JSON responses
+    employee_data = employee_response.json()
+    todos_data = todos_response.json()
+
+    # Extract relevant information
+    employee_name = employee_data.get("name")
+    completed_tasks = [task for task in todos_data if task["completed"]]
+    total_tasks = len(todos_data)
+    completed_count = len(completed_tasks)
+
+    # Print employee TODO list progress
+    print("Employee {} is done with tasks({}/{}):".format(employee_name, completed_count, total_tasks))
+    for task in completed_tasks:
+        print("\t {}".format(task["title"]))
+
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <employee_id>")
         sys.exit(1)
 
     try:
         employee_id = int(sys.argv[1])
+        get_employee_info(employee_id)
     except ValueError:
-        print("Employee ID must be an integer")
-        sys.exit(1)
-
-    employee_data, todos = get_employee_data(employee_id)
-
-    employee_name = employee_data.get("name")
-    completed_tasks = [todo for todo in todos if todo["completed"]]
-    total_tasks = len(todos)
-
-    print("Employee {} is done with tasks ({}/{}):".format(
-        employee_name,
-        len(completed_tasks),
-        total_tasks
-    ))
-
-    for task in completed_tasks:
-        print("\t {}".format(task["title"]))
-
-if __name__ == "__main__":
-    main()
+        print("Employee ID must be an integer.")
